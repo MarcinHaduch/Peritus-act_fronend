@@ -1,5 +1,7 @@
 export const elements = {
-
+    display: document.querySelector(".calculator__current"),
+    historyDisplay: document.querySelector(".calculator__history"),
+    calculatorInputs: Array.from(document.querySelectorAll(".calculator__element"))
 };
 export const emlementStrings = {
     loader: 'loader'
