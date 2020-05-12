@@ -1,221 +1,230 @@
-body,html {
-    margin: 0;
-    padding: 0;
-    font-family: 'Lato', sans-serif; 
-    font-weight: 300;
- }
+body,
+html {
+	margin: 0;
+	padding: 0;
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+}
+
 body {
-    height: 100vh;
-    width: 100vw;
+	height: 100vh;
+	width: 100vw;
 }
+
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
-.container{
-    height: 100%;
-    width: 100%;
-    padding: 10px;
-    font-size: 22px;
-    background: rgb(144,86,224);
-    background: linear-gradient(135deg, rgba(144,86,224,1) 0%, rgba(200,118,160,1) 50%, rgba(242,143,120,1) 100%);
+
+.container {
+	height: 100%;
+	width: 100%;
+	padding: 10px;
+	font-size: 22px;
+	background: rgb(144, 86, 224);
+	background: linear-gradient(135deg, rgba(144, 86, 224, 1) 0%, rgba(200, 118, 160, 1) 50%, rgba(242, 143, 120, 1) 100%);
 }
+
 .calculator {
-    margin: 0 auto;
-    width: 370px;
-    height: 600px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-    gap: 0px 0px;
-    grid-template-areas: "display display display display" "percent toggle-sign C divide" "seven eight nine X" "four five six minus" "one two three plus" "null coma calculate calculate";
-    background-color: #f1f1f1;
-    border-radius: 5px;
-    overflow: hidden;
-    
-  }
-  
-  .calculator__element{
-    position: relative;
-    transition: all 0.4s ease 0s;
-    user-select: none;
-  }
-  .calculator__element:hover:not(.display){
-    text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
-    -webkit-box-shadow: 0px 0px 40px -10px rgba(0,0,0,0.57);
-    -moz-box-shadow: 0px 0px 40px -10px rgba(0,0,0,0.57);
-    box-shadow: 0px 0px 40px -10px rgba(0,0,0,0.57);
-    transition: all 0.4s ease 0s;
-    z-index: 2;
-  } 
-  .calculator__element:active:not(.display), .calculator__element:focus:not(.display){
-    outline: none;
-    transform: translateY(-0.1rem);
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-   }
-  .calculator__element.divide{
-      background-color: #9156e1;
-  }
-  .calculator__element.X{
-      background-color: #8d52dd;
-      
-  }
-  .calculator__element.minus{
-    background-color: #894ed9;
-}
-.calculator__element.plus{
-    background-color: #8547d9;
-}
-.calculator__element.calculate{
-    background-color: #e62f89;
-}
-.center-me, .calculator__element>span{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
- 
-.display {
-    grid-area: display;
-    background-color: #212121;
-    color: #ffffff;
-    text-align: right;
-    padding-right: 30px;
-    height: 140px;
-
- }
- .calculator__history {
-     color:#cd7b8a;
-     margin-top: 37px;
-     font-size: 18px;
-     font-weight: 400;
-     margin-bottom: 0;
- }
- .calculator__current{
-   font-size: 46px;
-   margin-top: 5px;
-   margin-bottom: 32px;
- }
-  
-  .percent { 
-    grid-area: percent;
-    background-image: linear-gradient(to bottom right,#f7f7f7,#f1f1f1);
-  }
-
-.toggle-sign {
-  grid-area: toggle-sign;
-  background-image: linear-gradient(to bottom right,#f7f7f7,#f1f1f1);
+	margin: 0 auto;
+	width: 370px;
+	height: 600px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+	gap: 0px 0px;
+	grid-template-areas: "calculator__element--display calculator__element--display calculator__element--display calculator__element--display" "calculator__element--percent calculator__element--toggle-sign calculator__element--C calculator__element--divide" "calculator__element--seven calculator__element--eight calculator__element--nine calculator__element--X" "calculator__element--four calculator__element--five calculator__element--six calculator__element--minus" "calculator__element--one calculator__element--two calculator__element--three calculator__element--plus" "calculator__element--null calculator__element--coma calculator__element--calculate calculator__element--calculate";
+	background-color: #f1f1f1;
+	border-radius: 5px;
+	overflow: hidden;
 }
 
-.C { 
-  grid-area: C;
-  background-image: linear-gradient(to bottom right,#f7f7f7,#f0f0f0);
+.calculator__element {
+	position: relative;
+	transition: all 0.4s ease 0s;
+	user-select: none;
 }
 
-.divide { 
-  grid-area: divide;
-  color: #ffffff;    
+.calculator__element:hover:not(.calculator__element--display) {
+	text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+	-webkit-box-shadow: 0px 0px 40px -10px rgba(0, 0, 0, 0.57);
+	-moz-box-shadow: 0px 0px 40px -10px rgba(0, 0, 0, 0.57);
+	box-shadow: 0px 0px 40px -10px rgba(0, 0, 0, 0.57);
+	transition: all 0.4s ease 0s;
+	z-index: 2;
 }
 
-.seven { 
-  grid-area: seven;
-  background-image: linear-gradient(to bottom right,#ffffff,#f4f4f4);
+.calculator__element:active:not(.calculator__element--display),
+.calculator__element:focus:not(.calculator__element--display) {
+	outline: none;
+	transform: translateY(-0.1rem);
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
 
-.eight { 
-  grid-area: eight;
-  background-image: linear-gradient(to bottom right,#ffffff,#f4f4f4);
+.center-me,
+.calculator__element>span {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
 }
 
-.nine { 
-  grid-area: nine;
-  background-image: linear-gradient(to bottom right,#ffffff,#f4f4f4);
+.calculator__element--display {
+	grid-area: calculator__element--display;
+	background-color: #212121;
+	color: #ffffff;
+	text-align: right;
+	padding-right: 30px;
 }
 
-.X { 
-  grid-area: X;
-  color: #ffffff;
-  
-}
-  
-.four { 
-  grid-area: four;
-  background-image: linear-gradient(to bottom right,#ffffff,#f5f5f5);
+.calculator__history {
+	color: #cd7b8a;
+	margin-top: 37px;
+	font-size: 18px;
+	font-weight: 400;
+	margin-bottom: 0;
 }
 
-.five { 
-  grid-area: five;
-  background-image: linear-gradient(to bottom right,#ffffff,#f4f4f4);
+.calculator__current {
+	font-size: 46px;
+	margin-top: 5px;
+	margin-bottom: 26px;
 }
 
-.six { 
-  grid-area: six;
-  background-image: linear-gradient(to bottom right,#ffffff,#f4f4f4);
+.calculator__element--percent {
+	grid-area: calculator__element--percent;
+	background-image: linear-gradient(to bottom right, #f7f7f7, #f1f1f1);
 }
 
-.minus {
-  grid-area: minus;
-  color: #ffffff;
+.calculator__element--toggle-sign {
+	grid-area: calculator__element--toggle-sign;
+	background-image: linear-gradient(to bottom right, #f7f7f7, #f1f1f1);
 }
 
-.one { 
-  grid-area: one;
-  background-image: linear-gradient(to bottom right,#ffffff,#f4f4f4);
+.calculator__element--C {
+	grid-area: calculator__element--calculator__element--C;
+	background-image: linear-gradient(to bottom right, #f7f7f7, #f0f0f0);
 }
 
-.two { 
-  grid-area: two;
-  background-image: linear-gradient(to bottom right,#ffffff,#f4f4f4);
+.calculator__element--divide {
+	grid-area: calculator__element--divide;
+	color: #ffffff;
+	background-color: #9156e1;
 }
 
-.three { 
-  grid-area: three;
-  background-image: linear-gradient(to bottom right,#ffffff,#f4f3f2);
+.calculator__element--seven {
+	grid-area: calculator__element--seven;
+	background-image: linear-gradient(to bottom right, #ffffff, #f4f4f4);
 }
 
-.plus {
-  grid-area: plus;
-  color: #ffffff;
+.calculator__element--eight {
+	grid-area: calculator__element--eight;
+	background-image: linear-gradient(to bottom right, #ffffff, #f4f4f4);
 }
 
-.null { 
-  grid-area: null;
-  background-image: linear-gradient(to bottom right,#ffffff,#f4f4f4);
+.calculator__element--nine {
+	grid-area: calculator__element--nine;
+	background-image: linear-gradient(to bottom right, #ffffff, #f4f4f4);
 }
 
-.coma { 
-  grid-area: coma;
-  background-image: linear-gradient(to bottom right,#ffffff,#f4f4f4);
+.calculator__element--X {
+	grid-area: calculator__element--X;
+	color: #ffffff;
+	background-color: #8d52dd;
 }
 
-.calculate {
-  grid-area: calculate;
-  color: #ffffff;
+.calculator__element--four {
+	grid-area: calculator__element--four;
+	background-image: linear-gradient(to bottom right, #ffffff, #f5f5f5);
+}
+
+.calculator__element--five {
+	grid-area: calculator__element--five;
+	background-image: linear-gradient(to bottom right, #ffffff, #f4f4f4);
+}
+
+.calculator__element--six {
+	grid-area: calculator__element--six;
+	background-image: linear-gradient(to bottom right, #ffffff, #f4f4f4);
+}
+
+.calculator__element--minus {
+	grid-area: calculator__element--minus;
+	color: #ffffff;
+	background-color: #894ed9;
+}
+
+.calculator__element--one {
+	grid-area: calculator__element--one;
+	background-image: linear-gradient(to bottom right, #ffffff, #f4f4f4);
+}
+
+.calculator__element--two {
+	grid-area: calculator__element--two;
+	background-image: linear-gradient(to bottom right, #ffffff, #f4f4f4);
+}
+
+.calculator__element--three {
+	grid-area: calculator__element--three;
+	background-image: linear-gradient(to bottom right, #ffffff, #f4f3f2);
+}
+
+.calculator__element--plus {
+	grid-area: calculator__element--plus;
+	color: #ffffff;
+	background-color: #8547d9;
+}
+
+.calculator__element--null {
+	grid-area: calculator__element--null;
+	background-image: linear-gradient(to bottom right, #ffffff, #f4f4f4);
+}
+
+.calculator__element--coma {
+	grid-area: calculator__element--coma;
+	background-image: linear-gradient(to bottom right, #ffffff, #f4f4f4);
+}
+
+.calculator__element--calculate {
+	grid-area: calculator__element--calculate;
+	color: #ffffff;
+	background-color: #e62f89;
 }
 
 .footer {
-  position: absolute;
-  left: 5%;
-  bottom: 5%; 
+	position: absolute;
+	left: 5%;
+	bottom: 5%;
+}
 
+.love {
+	color: #ffffff;
+	font-size: 36px;
+	margin-bottom: 10px;
 }
-.love{
-  color:#ffffff;
-  font-size:36px;
-  margin-bottom: 10px;
-}
+
 .freebie {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 14px;
+	font-weight: 400;
+	background-color: #ffffff;
+	border-radius: 50px;
+	width: 90px;
+	height: 26px;
+}
 
-  font-size: 14px;
-  font-weight: 400;
-  
+@media only screen and (max-height: 875px) {
+	.footer {
+		visibility: hidden;
+		display: none;
+	}
+}
 
-  background-color: #ffffff;
-  border-radius: 50px;
-  width: 90px;
-  height: 26px;
-  
+@media only screen and (max-width: 440px),
+(max-height: 600px) {
+	.calculator {
+		height: 100%;
+		width: 100%;
+	}
 }

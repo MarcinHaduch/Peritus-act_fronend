@@ -7,6 +7,7 @@ import { elements } from './views/base';
  */
 
 const state = {}
+
 const init = () => {
     calculatorView.clearDisplay();
 }
@@ -22,13 +23,15 @@ const controlCalculator = (keyPressed) => {
     calculatorView.printDisplay(state.calculator.getFormatedExpression());
 
 }
+
+/**
+ * Event listeners
+ */
 elements.calculatorInputs.forEach((element, i) => {
     if (i !== 0) element.addEventListener("click", e => {
         e.preventDefault()
         controlCalculator(e.target.innerText)
     })
 })
-console.log(elements.calculatorInputs)
+
 window.addEventListener("load", init)
-console.log(Calculator)
-console.log(calculatorView)
