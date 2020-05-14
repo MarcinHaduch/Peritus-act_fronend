@@ -21,7 +21,7 @@ const controlCalculator = (keyPressed) => {
     state.calculator.inputKey(keyPressed);
     if (keyPressed === "=") calculatorView.printHistory(state.calculator.history)
     calculatorView.printDisplay(state.calculator.getFormatedExpression());
-
+    state.calculator.printEval();
 }
 
 /**

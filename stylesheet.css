@@ -88,6 +88,7 @@ body {
 	font-size: 46px;
 	margin-top: 5px;
 	margin-bottom: 26px;
+	min-height: 55px;
 }
 
 .calculator__element--percent {
@@ -101,7 +102,7 @@ body {
 }
 
 .calculator__element--C {
-	grid-area: calculator__element--calculator__element--C;
+	grid-area: calculator__element--C;
 	background-image: linear-gradient(to bottom right, #f7f7f7, #f0f0f0);
 }
 
