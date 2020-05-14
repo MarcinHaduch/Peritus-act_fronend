@@ -47,10 +47,6 @@ export default class Calculator {
     }
 
     getFormatedExpression() {
-        console.log(this.arrayOfInputs);
         return this.arrayOfInputs.join("");
-    }
-    printEval() {
-
     }
 }
