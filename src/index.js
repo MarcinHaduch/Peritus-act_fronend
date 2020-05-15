@@ -21,7 +21,6 @@ const controlCalculator = (keyPressed) => {
     state.calculator.inputKey(keyPressed);
     if (keyPressed === "=") calculatorView.printHistory(state.calculator.history)
     calculatorView.printDisplay(state.calculator.getFormatedExpression());
-    state.calculator.printEval();
 }
 
 /**
@@ -30,8 +29,8 @@ const controlCalculator = (keyPressed) => {
 elements.calculatorInputs.forEach((element, i) => {
     if (i !== 0) element.addEventListener("click", e => {
         e.preventDefault()
-        controlCalculator(e.target.innerText)
+        controlCalculator(e.target.innerText);
     })
 })
 
-window.addEventListener("load", init)
+window.addEventListener("load", init);
